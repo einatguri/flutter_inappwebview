@@ -209,7 +209,7 @@ class InAppWebViewController {
           String mimeType = call.arguments["mimeType"];
           Uri uri = Uri.parse(url);
           if (_webview != null && _webview!.onDownloadStart != null)
-            _webview!.onDownloadStart!(this, uri);
+            _webview!.onDownloadStart!(this, uri, contentDisposition, mimeType);
           else
             _inAppBrowser!.onDownloadStart(uri, contentDisposition, mimeType);
         }

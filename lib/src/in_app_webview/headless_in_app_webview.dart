@@ -299,8 +299,13 @@ class HeadlessInAppWebView implements WebView {
   void Function(InAppWebViewController controller)? onWindowBlur;
 
   @override
-  void Function(InAppWebViewController controller, Uri url,
-      String contentDispostion, String mimeType)? onDownloadStart;
+  void Function(
+      InAppWebViewController controller,
+      Uri url,
+      String contentDispostion,
+      String mimeType,
+      String userAgent,
+      int contentLength)? onDownloadStart;
 
   @override
   void Function(InAppWebViewController controller, int activeMatchOrdinal,

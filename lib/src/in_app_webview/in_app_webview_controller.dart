@@ -206,12 +206,16 @@ class InAppWebViewController {
             _inAppBrowser != null) {
           String url = call.arguments["url"];
           String contentDisposition = call.arguments["contentDisposition"];
-          String mimeType = call.arguments["mimeType"];
+          String mimeType = call.arguments["mimetype"];
+          String userAgent = call.arguments["userAgent"];
+          int contentLength = call.arguments["contentLength"];
           Uri uri = Uri.parse(url);
           if (_webview != null && _webview!.onDownloadStart != null)
-            _webview!.onDownloadStart!(this, uri, contentDisposition, mimeType);
+            _webview!.onDownloadStart!(this, uri, contentDisposition, mimeType,
+                userAgent, contentLength);
           else
-            _inAppBrowser!.onDownloadStart(uri, contentDisposition, mimeType);
+            _inAppBrowser!.onDownloadStart(
+                uri, contentDisposition, mimeType, userAgent, contentLength);
         }
         break;
       case "onLoadResourceCustomScheme":

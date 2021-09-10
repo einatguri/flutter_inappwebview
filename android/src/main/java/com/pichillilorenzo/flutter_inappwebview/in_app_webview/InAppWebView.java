@@ -1186,6 +1186,8 @@ final public class InAppWebView extends InputAwareWebView {
       obj.put("url", url);
       obj.put("contentDisposition", contentDisposition);
       obj.put("mimetype", mimetype);
+      obj.put("userAgent", userAgent);
+      obj.put("contentLength", contentLength);
       channel.invokeMethod("onDownloadStart", obj);
     }
   }

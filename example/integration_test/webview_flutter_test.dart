@@ -2753,7 +2753,8 @@ void main() {
             onWebViewCreated: (controller) {
               controllerCompleter.complete(controller);
             },
-            onDownloadStart: (controller, url, contentDisposition, mimeType) {
+            onDownloadStart: (controller, url, contentDisposition, mimeType,
+                userAgent, contentLength) {
               onDownloadStartCompleter.complete(url.toString());
             },
           ),

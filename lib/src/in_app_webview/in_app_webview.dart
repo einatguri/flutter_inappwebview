@@ -208,8 +208,8 @@ class InAppWebView extends StatefulWidget implements WebView {
       androidOnReceivedTouchIconUrl;
 
   @override
-  final void Function(InAppWebViewController controller, Uri url)?
-      onDownloadStart;
+  final void Function(InAppWebViewController controller, Uri url,
+      String contentDisposition, String mimeType)? onDownloadStart;
 
   @override
   final void Function(InAppWebViewController controller, int activeMatchOrdinal,
